@@ -16,5 +16,9 @@ http.createServer(function(req,res){
         //Convertir en chaine
         res.end(JSON.stringify(obj));
     }
-    
+    else{
+        res.writeHead(404);
+        res.end();
+    }
+
 }).listen(1337, '127.0.0.1');

@@ -30,14 +30,16 @@ app.post('/person', urlencodedParser, function(req,res){
     console.log(req.body.lastname)
 })
 
-app.post('/personjson', jsonParser, function(req,res){
-    res.send('Thank you for the json data !')
-    console.log(req.body.firstname)
-    console.log(req.body.lastname)
-})
-
-app.get('/api', function(req,res){
+app.get('/api/person/:id', function(req,res){
+    // get that data from database
     res.json({ firstname : 'Amine', lastname: 'BENBAKHTA' })
 })
 
+app.post('/api/person', jsonParser, function(req,res){
+    //save to database
+})
+
+app.delete('/api/person/:id', function(req,res){
+    //delete from database
+})
 app.listen(port)

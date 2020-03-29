@@ -10,14 +10,5 @@
             Last name: <input type="text" id="lastname" name="lastname" /><br/>
             <input type="submit" />
         </form>
-        <script>
-            $.ajax({
-                type: "POST",
-                url: "/personjson",
-                data: JSON.stringify({ firstname:'Amine', lastname: 'BENBAKHTA' }),
-                dataType: 'json',
-                contentType: 'application/json'    
-            })    
-        </script>
     </body>
 </html>

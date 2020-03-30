@@ -34,7 +34,7 @@ module.exports = function(app){
                     hasAttachment: req.body.hasAttachment
                 }, function(err,todo){
                     if(err) throw err
-                    res.send('Success')
+                    res.send('Update: Success !')
                 })
         }
         else{
@@ -46,16 +46,15 @@ module.exports = function(app){
             })
             newTodo.save(function(err){
                 if(err) throw err
-                res.send('Success')
+                res.send('Insertion: Success !')
             })
         }
     })
 
     app.delete('/api/todo', function(req, res){
-        Todos.findByIdAndRemove(req.body.id, function(err){
+        Todos.findByIdAndRemove(req.body.id, function(err, todo){
            if(err) throw err
-           res.send('Success') 
+           res.send('Delete: Success !\nDeleted ID: '+req.body.id) 
         })
     })
-
 }

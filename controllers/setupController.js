@@ -25,7 +25,7 @@ module.exports = function(app){
                 hasAttachment: false
             },
         ]
-        Todos.create(startedTodos, function(err, results){
+        Todos.create(starterTodos, function(err, results){
             res.send(results)
         })
         
